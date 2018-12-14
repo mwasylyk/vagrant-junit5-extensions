@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ vagrant-junit5-extensions
+  ~ Copyright (C) 2018 - coffeemilk.app
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>app.coffeemilk.test</groupId>
+	<artifactId>vagrant-junit5-extensions</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>Vagrant JUnit5 Extensions</name>
+	<url>https://github.com/mwasylyk/vagrant-junit5-extensions</url>
+	<description>JUnit5 Extensions to manage automated integration tests with Vagrant VMs</description>
+	<inceptionYear>2018</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>GNU General Public License 3.0</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+		</license>
+	</licenses>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+		<junit5.version>5.3.2</junit5.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- NOTE Once this is a public artifact it will replace the JUnit entries -->
+			<!--<dependency>
+				<groupId>app.coffeemilk.bom</groupId>
+				<artifactId>coffeemilk-bom-testing</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+			</dependency>-->
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>${junit5.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${junit5.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
+				<version>${junit5.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.zeroturnaround</groupId>
+			<artifactId>zt-exec</artifactId>
+			<version>1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.4</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<developers>
+		<developer>
+			<id>mwasylyk</id>
+			<name>Michael Wasylyk</name>
+			<email>mike@coffeemilk.app</email>
+			<organization>CoffeeMilk App's</organization>
+			<organizationUrl>coffeemilk.app</organizationUrl>
+			<roles>
+				<role>project-owner</role>
+				<role>developer</role>
+				<role>architect</role>
+			</roles>
+			<timezone>America/New_York</timezone>
+			<properties>
+				<picUrl>
+					https://lh3.googleusercontent.com/0svrtgTTZcfslCv3cZQVJWI1fQPopo5Gy_eVXreelcB7uay8psfUSIvsNaPMvdDNMeo5dieC5qB5TeBNulOWdfTHl399yHCr_jfU53Q2E_n6KStnA82aQiaMq2YkCNhnm-7MMyhzRQDbGZ2u_FtKp4luvdhTLCDJcIP4S7nh5kvFL-KNHHcRxR6QYQb1OMY0baSZ-_9b7dxvb7lgu-pm0srSyCpvlrjPgT8eS_Kvoygu8rBhguI8xhg-IDKiSb6nCbXXkLxWQvr91rsPjlbUdHFhREpcjdPRm_illK7293BoDDyqCVH0HWngE2QQpiPhd1FTDswZa7Xe4yfVV1b0Y7nPsB3eV06NB2UFaV2q4MXfIre9Ui7dcLz35j7iBtwGur5oDvWnkojm7M5rve7Ib_Kj07utpkq8oWelPudnOLIZLnR2R-8vO7oqT4XSgJ40whxPfM00OvfBCoBWP3zU7HGG3_XZ5tBp44Gu6K8HOkGDd4fNWnW4mBCJhBl85UUoXYY-B13RfX0hbbu7XezpxEG8sPsqDFIGHJoVIxR_YpHFRX1sC_8N4aSeWS3kqAp8Q-pcOznRSrz9zi7y4ECstVb1lfquESJAavz7F0Khj5vlP9lBbToe9J7mycdTloS4OR5yM9FDZqiMQ35c4fq6NGoPrYMQWiGbtQyeF4Rn1KkpZJEuhrRMCJK8aw5t1E-HTCtvcpT-pASVnZGTNHU=s1200-no
+				</picUrl>
+			</properties>
+		</developer>
+	</developers>
+
+
+</project>
